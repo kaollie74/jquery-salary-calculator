@@ -27,6 +27,8 @@ function readyNow() {
 }
 
 function displaySalary(){
+    let AnnualSalary = 0;
+    let monthlySalary = 0;
     console.log('in Display inventory');
     //target id element and set it to el.
     let el = $('#employeeInfoOut');
@@ -39,9 +41,24 @@ function displaySalary(){
         <th>${salaryInventory[i].lastName}</th>
         <th>${salaryInventory[i].id}</th>
         <th>${salaryInventory[i].title}</th>
-        <th>${salaryInventory[i].firstName}</th>
         <th>${salaryInventory[i].salary}</th>
         </tr>`);
         
-    }
-}
+        AnnualSalary += Number(salaryInventory[i].salary);
+        
+        }// end for loop
+        
+        monthlySalary = Math.round(AnnualSalary / 12);
+
+        $('#background').html(monthlySalary);
+        
+        if (monthlySalary > 20000){
+            $('#background').append().addClass('red-background');
+        }// end if 
+        
+     
+} // end displaySalary
+
+function monthlyCost(){
+
+}// end monthlyCost
