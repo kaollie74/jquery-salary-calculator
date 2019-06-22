@@ -21,10 +21,6 @@ let newItem = {
  displaySalary();
 }// end addItem
 
-function readyNow() {
-    console.log('jq');
-    $('#addItemButton').on('click', addItem);
-}
 
 function displaySalary(){
     let AnnualSalary = 0;
@@ -34,15 +30,16 @@ function displaySalary(){
     let el = $('#employeeInfoOut');
     // empty output element;
     el.empty();
-    for(let i=0; i < salaryInventory.length; i++){
+    for(let i=0; i < salaryInventory.length; i++){ // good practice is to use <td> not <th>
         el.append(
         `<tr>
-        <th>${salaryInventory[i].firstName}</th>
+        <th>${salaryInventory[i].firstName}</th> 
         <th>${salaryInventory[i].lastName}</th>
         <th>${salaryInventory[i].id}</th>
         <th>${salaryInventory[i].title}</th>
         <th>${salaryInventory[i].salary}</th>
-        </tr>`);
+        <th><button class="deleteButton">Delete</button></th> 
+        </tr>`)
         
         AnnualSalary += Number(salaryInventory[i].salary);
         
@@ -53,12 +50,23 @@ function displaySalary(){
         $('#background').html(monthlySalary);
         
         if (monthlySalary > 20000){
-            $('#background').append().addClass('red-background');
+            
+        $('#background').parent().addClass('backgroundRed');
+    
+            
+            
         }// end if 
         
      
 } // end displaySalary
 
-function monthlyCost(){
+function deleteEmployee(){
+    console.log('In deleteEmployee');
+    $(this).closest('tr').remove();
+}// end deleteEmployee
 
-}// end monthlyCost
+function readyNow() {
+    console.log('jq');
+    $('#addItemButton').on('click', addItem);
+    $('#employeeInfoOut').on('click', '.deleteButton', deleteEmployee);
+}
