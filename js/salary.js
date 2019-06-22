@@ -16,8 +16,11 @@ let newItem = {
 
  }// end newItem
  console.log(newItem);
+ //push newItem object into salaryInventory array.
  salaryInventory.push(newItem);
+ // targets class and empties all the inputs
  $('.removeAll').val('');
+ // invoke function
  displaySalary();
 }// end addItem
 
@@ -41,7 +44,7 @@ function displaySalary(){
         <th><button class="deleteButton">Delete</button></th> 
         </tr>`)
         
-        AnnualSalary += Number(salaryInventory[i].salary);
+        AnnualSalary +=  Number(salaryInventory[i].salary);
         
         }// end for loop
         
