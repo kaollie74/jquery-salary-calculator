@@ -1,7 +1,30 @@
+
+
+#addItemButton{
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.container{
+    position: relative;
+    padding: 0px 20px 20px 0px;
+    margin: 20px 10px;
+}
 .backgroundRed{
     background-color: red;
 }
 
 .header{
     background-color: white;
+}
+
+.monthly-salary-output{
+    float: right;
+    position: relative;
+    margin-right: 400px;
+    font-style: cursive;
+}
+
+.page-header{
+    text-align: center;
 }
