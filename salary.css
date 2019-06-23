@@ -1,37 +1,63 @@
+
+
+#add-employee{
+    background-color: #5d5c61;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 10px;
+    
+    text-align: center;
+}
+
 #addItemButton {
     margin-left: 10px;
     margin-bottom: 2px;
 }
 
-body{
-    background-color: lightsteelblue;
-}
-
-.container {
-    position: relative;
-    padding: 0px 20px 20px 0px;
-    margin: 20px 10px;
+.body {
+    background-color: #557A95;
 }
 
 .backgroundRed {
     background-color: red;
 }
 
+
+.container {
+    position: relative;
+    padding: 0px 20px 20px 0px;
+    margin: 20px ;
+    
+}
+
+.employee-text {
+    padding-bottom: 10px;
+}
+
+
+
 .header {
     text-align: center;
-    font-style: oblique;
+    font-family: oblique;
+    
 }
 
 .monthly-salary-output {
     float: right;
+    font-family: Arial;
+    font-weight: 600;
     position: relative;
     margin-right: 400px;
-    font-style: cursive;
+    
+
 }
 
 .page-header {
     text-align: center;
-}
+    background-color: #B1A296;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    }
 
 .tbody-data {
     text-align: center;

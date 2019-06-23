@@ -28,13 +28,15 @@ function addItem() {
     }
 } // end addItem
 
+// function activates when one of the fields 
+//left empty.
 function textEmpty() {
     alert('you must fill out all text fields')
     return false;
 }
 
 
-//let monthlySalary = 0;
+
 
 function displaySalary() {
     let annualSalary = 0;
@@ -82,7 +84,7 @@ function displaySalary() {
 } // end displaySalary
 
 function deleteEmployee() {
-   
+
     let index = salaryInventory.indexOf('tr');
     $(this).closest('tr').remove();
     salaryInventory.splice(index, 1);
