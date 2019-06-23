@@ -75,10 +75,9 @@ function displaySalary() {
         // targets ID (where I want it to go) and changes the
         // background to red.
         $('#background').parent().addClass('backgroundRed');
-
-
-
-    } // end if 
+    } else if(monthlySalary < 20000) {
+         $('#background').parent().removeClass('backgroundRed');
+    }
 
 
 } // end displaySalary
@@ -86,7 +85,7 @@ function displaySalary() {
 function deleteEmployee() {
 
     let index = salaryInventory.indexOf('tr');
-    $(this).closest('tr').remove();
+    $(this).closest('tr').remove(); // .closest() removes the first <tr> that it runs in to
     salaryInventory.splice(index, 1);
 
     displaySalary();
