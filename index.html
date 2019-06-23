@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+<main>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/salary.js"></script>
-    <link rel="stylesheet" href="salary.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <title>Salary Calculator</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<body>
-    <div class= "page-header">
-    <h1>Salary Calculator</h1>
-    </div>
-    <div class="container" id="add-employee">
-    <h2>Add Employee</h2>
-    <input class="removeAll" placeholder="FirstName" id="firstNameIn">
-    <input class="removeAll" placeholder="Last Name" id="lastNameIn">
-    <input class="removeAll" type="number" placeholder="ID" id="idIn">
-    <input class="removeAll" type="text" placeholder="Title" id="jobTitleIn">
-    <input class="removeAll" type="number" placeholder="Salary" id="salaryIn">
-    <button class="removeAll btn btn-success btn-sm"  id="addItemButton">Submit</button>
-     </div>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/salary.js"></script>
+        <link rel="stylesheet" href="salary.css">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <title>Salary Calculator</title>
+    </head>
 
-    <section id="employeeTableOut" class="container">
-        <table class="table  table-bordered table-dark table-hover">
-            <thead .class="header">
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Annual Salary</th>
-            </thead>
-            <tbody id="employeeInfoOut">
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
-            </tbody>
-            
-        </table>
-    </section>
-    <div class="monthly-salary-output">
-        <h4>Total Monthly Salary: 
-            <span id="background"></span>
-        </h4>
-    </div>
-
-   
+    <body>
 
 
+        <div class="page-header">
+            <h1>Salary Calculator</h1>
+        </div>
+        <div class="container" id="add-employee">
+            <h2>Add Employee</h2>
+            <input class="removeAll" placeholder="FirstName" id="firstNameIn">
+            <input class="removeAll" placeholder="Last Name" id="lastNameIn">
+            <input class="removeAll" type="number" placeholder="ID" id="idIn">
+            <input class="removeAll" type="text" placeholder="Title" id="jobTitleIn">
+            <input class="removeAll" type="number" placeholder="Salary" id="salaryIn">
+            <button class="removeAll btn btn-success btn-sm" id="addItemButton">Submit</button>
+        </div>
 
-</body>
+        <section id="employeeTableOut" class="container">
+            <table class="table  table-bordered table-dark table-hover">
+                <thead class="header">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                </thead>
+                <tbody id="employeeInfoOut" class="tbody-data">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </section>
+        <div class="monthly-salary-output">
+            <h4>Total Monthly Salary:
+                <span id="background"></span>
+            </h4>
+        </div>
+
+
+
+
+
+    </body>
+    </main>
 
 </html>

@@ -3,39 +3,50 @@ $(document).ready(readyNow);
 
 let salaryInventory = [];
 // function creates object and pushes it into array.
-function addItem(){
-console.log('in additem');
- 
- // capture user input
-let newItem = {
-     firstName: $('#firstNameIn').val(),
-     lastName: $('#lastNameIn').val(),
-     id: $('#idIn').val(),
-     title: $('#jobTitleIn').val(),
-     salary: $('#salaryIn').val()
+function addItem() {
+    console.log('in additem');
 
- }// end newItem
- console.log(newItem);
- //push newItem object into salaryInventory array.
- salaryInventory.push(newItem);
- // targets class and empties all the inputs
- $('.removeAll').val('');
- // invoke function
- displaySalary();
-}// end addItem
+    // capture user input
+    let newItem = {
+        firstName: $('#firstNameIn').val(),
+        lastName: $('#lastNameIn').val(),
+        id: $('#idIn').val(),
+        title: $('#jobTitleIn').val(),
+        salary: $('#salaryIn').val()
+
+    } // end newItem
+    if (newItem.firstName === "" || newItem.lastName === "" || newItem.id === "" || newItem.title === "" || newItem.salary === "") {
+        textEmpty();
+    } else {
+        console.log(newItem);
+        //push newItem object into salaryInventory array.
+        salaryInventory.push(newItem);
+        // targets class and empties all the inputs
+        $('.removeAll').val('');
+        // invoke function
+        displaySalary();
+    }
+} // end addItem
+
+function textEmpty() {
+    alert('you must fill out all text fields')
+    return false;
+}
 
 
-function displaySalary(){
-    let AnnualSalary = 0;
+//let monthlySalary = 0;
+
+function displaySalary() {
+    let annualSalary = 0;
     let monthlySalary = 0;
     console.log('in Display inventory');
     //target id element and set it to el.
     let el = $('#employeeInfoOut');
     // empty output element;
     el.empty();
-    for(let i=0; i < salaryInventory.length; i++){ // good practice is to use <td> not <th>
+    for (let i = 0; i < salaryInventory.length; i++) { // good practice is to use <td> not <th>
         el.append(
-        `<tr>
+            `<tr>
         <th>${salaryInventory[i].firstName}</th> 
         <th>${salaryInventory[i].lastName}</th>
         <th>${salaryInventory[i].id}</th>
@@ -43,30 +54,43 @@ function displaySalary(){
         <th>${salaryInventory[i].salary}</th>
         <th><button class="deleteButton">Delete</button></th> 
         </tr>`)
-        
-        AnnualSalary +=  Number(salaryInventory[i].salary);
-        
-        }// end for loop
-        
-        monthlySalary = Math.round(AnnualSalary / 12);
+        // while looping, capture the value of salaryInventory[i].salary
+        // and add it to the AnnualSalary variable
+        annualSalary += Number(salaryInventory[i].salary);
 
-        $('#background').html(monthlySalary);
-        
-        if (monthlySalary > 20000){
-            
+    } // end for loop
+
+    // take the current annualSalary/12, round up or
+    // down depending on decimal and assign to monthlySalary
+    monthlySalary = Math.round(annualSalary / 12);
+
+    // target ID (where i want it to go) and send the current
+    // monthlySalary value to the DOM.
+    $('#background').html(monthlySalary);
+
+    // condition checks if the monthlySalary is over 20,000
+    if (monthlySalary > 20000) {
+        // targets ID (where I want it to go) and changes the
+        // background to red.
         $('#background').parent().addClass('backgroundRed');
-    
-            
-            
-        }// end if 
-        
-     
+
+
+
+    } // end if 
+
+
 } // end displaySalary
 
-function deleteEmployee(){
-    console.log('In deleteEmployee');
+function deleteEmployee() {
+   
+    let index = salaryInventory.indexOf('tr');
     $(this).closest('tr').remove();
-}// end deleteEmployee
+    salaryInventory.splice(index, 1);
+
+    displaySalary();
+
+} // end deleteEmployee
+
 
 function readyNow() {
     console.log('jq');
